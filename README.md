@@ -58,7 +58,7 @@ Codes for preparation and clustering of base and word segment data for a barn ow
 <a id="1">[1]</a>
 Varun Sethi, Orr Spiegel, Richard Salter, Shlomo Cain, Sivan Toledo, Wayne M. Getz (2024).
 An Information Theory Framework for Movement Path Segmentation and Analysis.
-bioRxiv 2024.08.xx.xxxxxx, doi: https://doi.org/xx.xxxx/2024.08.xx.xxxxxx; GitHub repository: https://github.com/Observarun/Hierarchical-path-segmentation-II
+bioRxiv 2024.08.02.606194, doi: https://doi.org/10.1101/2024.08.02.606194; GitHub repository: https://github.com/Observarun/Hierarchical-path-segmentation-II
 
 <a id="2">[2]</a> 
 Wayne M. Getz, Richard Salter, Varun Sethi, Shlomo Cain, Orr Spiegel, Sivan Toledo (2023). 
