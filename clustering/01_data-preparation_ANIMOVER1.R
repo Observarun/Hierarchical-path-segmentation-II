@@ -1,7 +1,7 @@
 # Code for preprocessing ANIMOV1 simulation data.
 
 
-df_DARs_synth <- read.csv(file=".../multi-DAR_sim.csv", skip=6)  # First few rows have explanatory text, hence skipped.
+df_DARs_synth <- read.csv(file=".../multi-DAR_sim.csv", skip=6)  #  the file can be downloaded from the Dryad repository https://doi.org/10.5061/dryad.jm63xsjkv
 df_DARs_synth <- na.omit(df_DARs_synth)
 
 df_DARs_synth <-
