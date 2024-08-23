@@ -2,9 +2,7 @@
 
 
 
-list_DARs_indiv <- readRDS(".../mid_to_mid1.Rds")
-# See https://github.com/LudovicaLV/DAR_project/blob/main/DAR1_measures.R for
-# the code to extract DARs from multi-DAR time-series data of an individual.
+list_DARs_indiv <- readRDS(".../list-DARsAsDataframes_owl.Rds")  # the file can be downloaded from the Dryad repository https://doi.org/10.5061/dryad.jm63xsjkv
 
 set.seed(17)
 nbrs_DAR_indiv <- sample(1:113, 25, replace=FALSE)
