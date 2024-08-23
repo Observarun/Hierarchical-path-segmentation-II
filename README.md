@@ -83,7 +83,7 @@ Table: Comparison of various feature-based (or vector) and shape-based clusterin
 
 <img width="739" alt="Word-type-distributions_simulated-data" src="https://github.com/user-attachments/assets/5e95f1c8-55e1-4abe-bba7-04c95642b226">
 <br/>
-Figure: Word type distributions for each word cluster (CAM) with 4 StaMEs (base segment clusters) and m=3 (i.e., 3 base segments constituting a word) obtained using different coding schemes for the case of simulated data. Rectified CAM assignment for each word type is denoted by filled bars. CAMs are ordered in decreasing order of speed with red signifying the fastest CAM.
+Figure: Word-type distributions for each word cluster (CAM) with 4 StaMEs (base segment clusters) and m=3 (i.e., 3 base segments constituting a word) obtained using different coding schemes for the case of simulated data. Rectified CAM assignment for each word type is denoted by filled bars. CAMs are ordered in decreasing order of speed with red signifying the fastest CAM.
 
 
 ## References
