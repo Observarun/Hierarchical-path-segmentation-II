@@ -55,4 +55,4 @@ for(c in 1:k)
 }
 
 
-saveRDS(list_words_corresponding_segments, ".../segments_corresp_each_word.RData")
+saveRDS(list_words_corresponding_segments, ".../segments_corresp_each_word.Rds")
