@@ -61,7 +61,7 @@ turning_angle <-
     df_DARs_indiv,
     ifelse(turning_angle>pi, turning_angle-2*pi, turning_angle)
   )
-#turning_angle <- abs(turning_angle)  # only for absolute (or reflection invariant) turning angle; to work with actual value of turning angle, line 66 must be commented
+#turning_angle <- abs(turning_angle)  # only for absolute (or reflection invariant) turning angle; to work with actual value of turning angle, line 64 must be commented
 df_DARs_indiv <- df_DARs_indiv[-1, ]  # first point discarded for the lack of turning angle value
 df_DARs_indiv$heading <- turning_angle
 colnames(df_DARs_indiv)[5] <- 'turning_angle'
