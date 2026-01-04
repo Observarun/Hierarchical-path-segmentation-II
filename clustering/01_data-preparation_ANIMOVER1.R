@@ -40,8 +40,8 @@ colnames(df_DARs_synth)[4] <- "speed"
 colnames(df_DARs_synth)[5] <- "turning_angle"
 
 
-df_DARs_indiv$speed <- (df_DARs$speed)/max(df_DARs$speed)
-df_DARs_indiv$turning_angle <- (df_DARs$turning_angle)/pi
+df_DARs_synth$speed <- (df_DARs_synth$speed)/max(df_DARs_synth$speed)
+df_DARs_synth$turning_angle <- (df_DARs_synth$turning_angle)/pi
 # Scaling to bring the variables to range on [0,1].
 
 
