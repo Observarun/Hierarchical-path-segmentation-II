@@ -15,7 +15,7 @@ for (i in nbrs_DAR_indiv){
     )
 }  # to work with 25 random DARs of an individual
 
-# Alternatively, to work with all available DARs of an individual, uncomment the next line (17).
+# Alternatively, to work with all available DARs of an individual, uncomment the next line (19).
 #df_DARs_indiv <- do.call(rbind, list_DARs_indiv)
 
 
