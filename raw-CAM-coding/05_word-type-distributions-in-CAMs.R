@@ -1,5 +1,6 @@
 library(ggplot2)
 
+
 distinct_labels <- readRDS(".../labels-for-word-types")
 cluster_occupancy_words <- scan(".../cluster-occupancy_decreasing-speed")
 cluster_sequence_words <- scan(".../cluster-sequence_decreasing-speed")
@@ -24,7 +25,7 @@ for(c in 1:k)
   for(idx in which(cluster_sequence_words %in% c))
   {
     label <- paste0(
-      scan(".../cluster-sequence_decreasing-speed")[(m*idx)-(m-1)]
+      scan(".../cluster-sequence_decreasing-speed")[(m*idx)-(m-1)],
       scan(".../cluster-sequence_decreasing-speed")[(m*idx)-(m-2)],
       scan(".../cluster-sequence_decreasing-speed")[(m*idx)-(m-3)],  # not required for m<3
       scan(".../cluster-sequence_decreasing-speed")[(m*idx)-(m-4)],  # not required for m<4
@@ -67,7 +68,7 @@ saveRDS(df_labels_counts_maxcountcluster, ".../label_count_max-count-cluster.Rds
 
 colour_bar <- c('red4', 'red', 'orange', 'yellow', 'green', 'lightblue', 'blue3', 'violet')
 
-for(c in 1:nk){
+for(c in 1:k){
   colour_palette <-
     ifelse(
       df_labels_counts_maxcountcluster$max_count_cluster==c,
