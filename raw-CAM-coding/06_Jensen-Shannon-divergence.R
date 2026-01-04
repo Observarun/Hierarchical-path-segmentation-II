@@ -11,7 +11,7 @@ P_Word_before <-
   sapply(  # lapply returns a list even when a vector is passed; sapply returns a vector
     labels_words,
     function(word){
-      prod(P_symbol[strsplit(word,'')[[1]] |>
+      prod(cluster_occupancy_symbols[strsplit(word,'')[[1]] |>
             as.numeric()])
     }
   )
@@ -36,6 +36,7 @@ for (c in 1:k) {
   H_after_word_clustering =
     H_after_word_clustering -
       (cluster_occupancy_words[c]/sum(cluster_occupancy_words)) * sum(P_Word_after[,c] * log2(ifelse(P_Word_after[,c]==0, 1, P_Word_after[,c])))
+  }
 
 
 # Normalised Jensen Shannon divergence
