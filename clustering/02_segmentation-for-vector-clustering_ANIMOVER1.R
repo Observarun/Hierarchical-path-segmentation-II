@@ -1,4 +1,4 @@
-# Code for coordinated segmentation of ANIMOV1 simulation data at the two resolutions ($\mu$ steps and $m\mu$ steps) to perform vector clustering.
+# Program for coordinated segmentation of ANIMOV1 simulation data at the two resolutions ($\mu$ steps and $m\mu$ steps) to perform vector clustering.
 
 
 
