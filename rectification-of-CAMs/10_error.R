@@ -2,6 +2,7 @@ distinct_labels <- readRDS(".../labels-for-word-types")
 list_labels <- readRDS(".../word-type-distributions-each-CAM.Rds")
 cluster_occupancy_words <- scan(".../cluster-occupancy_decreasing-speed")
 
+k <- 4
 error_rate <- 0
 
 for (label in distinct_labels)
@@ -14,7 +15,7 @@ for (label in distinct_labels)
       count_label + list_labels[[c]]$count[list_labels[[c]]$distinct_labels==label]
     nr_in_braket <-
       append(
-        Nr_in_braket,
+        nr_in_braket,
         list_labels[[c]]$count[list_labels[[c]]$distinct_labels==label]/cluster_occupancy_words[c]
       )
     dr_in_braket <-
