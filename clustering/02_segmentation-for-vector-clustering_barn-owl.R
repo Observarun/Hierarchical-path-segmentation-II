@@ -69,5 +69,5 @@ df_coarser_chunks_DARs_indiv <-
       )
       
 
-saveRDS(df_finer_chunks_DARs_synth, file=".../base-segments-for-vector-clust_barn-owl.Rds")
-saveRDS(df_coarser_chunks_DARs_synth, file=".../word-segments-for-vector-clust_barn-owl.Rds")
+saveRDS(df_finer_chunks_DARs_indiv, file=".../base-segments-for-vector-clust_barn-owl.Rds")
+saveRDS(df_coarser_chunks_DARs_indiv, file=".../word-segments-for-vector-clust_barn-owl.Rds")
