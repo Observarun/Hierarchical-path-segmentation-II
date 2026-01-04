@@ -23,7 +23,7 @@ doSNOW::registerDoSNOW(clustr)
 d_rf <-
   foreach(n_tree=rep(1000/future::availableCores(), future::availableCores()), .combine=randomForest::combine, .packages="randomForest") %dopar%
   {randomForest(
-    df_chunks_DARs[c("Sp_mean","Ta_mean","Sp_std","Ta_std","Rel_disp")],
+    df_chunks_DARs[c("speed_mean","turning_angle_mean","speed_std","turning_angle_std","net_displacement")],
     y=NULL,
     ntree=n_tree,
     proximity=TRUE,
