@@ -1,4 +1,4 @@
-list_segs_in_rectified_CAMs <- readRDS(".../segments_corresp_each_word.Rds")
+list_words_corresponding_segments <- readRDS(".../segments_corresp_each_word.Rds")
 df_labels_counts_maxcountcluster <- data.frame(readRDS(".../label_count_max-count-cluster.Rds"))
 
 
@@ -24,11 +24,11 @@ for(l in 1:length(labels_words)){
   else if(df_labels_counts_maxcountcluster$total_count[l]!=0)
   {
     for(n_seg_l in 1:length(list_words_corresponding_segments[[l]][[2]])){
-      list_segs_in_rectified_CAMs[[df_label_max_count$max_count_cluster[l]]][[2]] <- append(list_segs_in_rectified_CAMs[[df_label_max_count$max_count_cluster[l]]][[2]], list_words_corresponding_segments[[l]][[2]][n_seg_l])
-      list_segs_in_rectified_CAMs[[df_label_max_count$max_count_cluster[l]]][[3]] <- append(list_segs_in_rectified_CAMs[[df_label_max_count$max_count_cluster[l]]][[3]], list_words_corresponding_segments[[l]][[3]][n_seg_l])
-      list_segs_in_rectified_CAMs[[df_label_max_count$max_count_cluster[l]]][[4]] <- append(list_segs_in_rectified_CAMs[[df_label_max_count$max_count_cluster[l]]][[4]], list_words_corresponding_segments[[l]][[4]][n_seg_l])
-      list_segs_in_rectified_CAMs[[df_label_max_count$max_count_cluster[l]]][[5]] <- append(list_segs_in_rectified_CAMs[[df_label_max_count$max_count_cluster[l]]][[5]], list_words_corresponding_segments[[l]][[5]][n_seg_l])
-      list_segs_in_rectified_CAMs[[df_label_max_count$max_count_cluster[l]]][[6]] <- append(list_segs_in_rectified_CAMs[[df_label_max_count$max_count_cluster[l]]][[6]], list_words_corresponding_segments[[l]][[6]][n_seg_l])
+      list_segs_in_rectified_CAMs[[df_labels_counts_maxcountcluster$max_count_cluster[l]]][[2]] <- append(list_segs_in_rectified_CAMs[[df_labels_counts_maxcountcluster$max_count_cluster[l]]][[2]], list_words_corresponding_segments[[l]][[2]][n_seg_l])
+      list_segs_in_rectified_CAMs[[df_labels_counts_maxcountcluster$max_count_cluster[l]]][[3]] <- append(list_segs_in_rectified_CAMs[[df_labels_counts_maxcountcluster$max_count_cluster[l]]][[3]], list_words_corresponding_segments[[l]][[3]][n_seg_l])
+      list_segs_in_rectified_CAMs[[df_labels_counts_maxcountcluster$max_count_cluster[l]]][[4]] <- append(list_segs_in_rectified_CAMs[[df_labels_counts_maxcountcluster$max_count_cluster[l]]][[4]], list_words_corresponding_segments[[l]][[4]][n_seg_l])
+      list_segs_in_rectified_CAMs[[df_labels_counts_maxcountcluster$max_count_cluster[l]]][[5]] <- append(list_segs_in_rectified_CAMs[[df_labels_counts_maxcountcluster$max_count_cluster[l]]][[5]], list_words_corresponding_segments[[l]][[5]][n_seg_l])
+      list_segs_in_rectified_CAMs[[df_labels_counts_maxcountcluster$max_count_cluster[l]]][[6]] <- append(list_segs_in_rectified_CAMs[[df_labels_counts_maxcountcluster$max_count_cluster[l]]][[6]], list_words_corresponding_segments[[l]][[6]][n_seg_l])
     }
   }
 }
