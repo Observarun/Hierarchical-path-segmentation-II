@@ -8,9 +8,9 @@ df_DARs_synth <-
   transform(
     df_DARs_synth,
     Delta=Delta+99*(Day-1)
-  )  # time parameter in ANIMOV1 resets at the turn of each day.
+  )  # time parameter in ANIMOV1 resets at the turn of each day
 
-colnames(df_DARs_synth)[6] <- "heading"  # Changing name of column 6 to reflect angle of heading.
+colnames(df_DARs_synth)[6] <- "heading"  # changing name of column 6 to reflect angle of heading
 df_DARs_synth$heading <-
   with(
     df_DARs_synth,
