@@ -17,8 +17,8 @@ create_chunks <- function(df, mu){
     speed_std = base::sd(speed, na.rm = TRUE),
     turning_angle_mean = base::mean(turning_angle, na.rm = TRUE),
     turning_angle_std = base::sd(turning_angle, na.rm = TRUE),
-    disp_ends = sqrt((X[n()] - X[1])^2 + (Y[n()] - Y[1])^2),
-    disp_consec = sum(sqrt(diff(X)^2 + diff(Y)^2)),
+    disp_ends = sqrt((x[n()] - x[1])^2 + (y[n()] - y[1])^2),
+    disp_consec = sum(sqrt(diff(x)^2 + diff(y)^2)),
     n_pts = n(),
     ) |>
     filter(n_pts==mu) |>
