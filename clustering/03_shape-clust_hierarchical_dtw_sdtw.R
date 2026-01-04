@@ -1,9 +1,11 @@
 library(dtwclust)
 library(fastcluster)
 
-df_chunks_DARs <- data.frame(readRDS(".../segments-for-shape-clust_ANIMOV.Rds"))  # for working w/ ANIMOVER1 segment data; line 4 to be uncommented and lines 5, 6 to be commented
-#df_chunks_DARs <- readRDS(".../word-speed-turning-angle-segments-for-shape-clust_barn-owl.Rds")  # for working w/ barn owl word segment data; line 5 to be uncommented and lines 4, 6 to be commented
-#df_chunks_DARs <- readRDS(".../base-speed-turning-angle-segments-for-shape-clust_barn-owl.Rds")  # for working w/ barn owl base segment data; line 6 to be uncommented and lines 4, 5 to be commented
+
+list_matrices_chunks_DARs <- data.frame(readRDS(".../segments-for-shape-clust_ANIMOV.Rds"))  # for working w/ ANIMOVER1 segment data; line 4 to be uncommented and lines 5, 6 to be commented
+#list_matrices_chunks_DARs <- readRDS(".../word-speed-turning-angle-segments-for-shape-clust_barn-owl.Rds")  # for working w/ barn owl word segment data; line 5 to be uncommented and lines 4, 6 to be commented
+#list_matrices_chunks_DARs <- readRDS(".../base-speed-turning-angle-segments-for-shape-clust_barn-owl.Rds")  # for working w/ barn owl base segment data; line 6 to be uncommented and lines 4, 5 to be commented
+
 
 wrapper_for_clustering_tsclust <-
   function(distmat) {
@@ -13,7 +15,7 @@ wrapper_for_clustering_tsclust <-
 nk=8  # number of clusters
 result_clustering <-
   dtwclust::tsclust(
-    list_matrices_chunks_DARs_indiv,
+    list_matrices_chunks_DARs,
     type = "h", k=nk,
     distance="dtw_basic",  # for Soft-DTW, replace 'dtw_basic' w/ 'soft-dtw'; w/ quotes
     centroid = dba,  # for Soft-DTW, replace 'dba' w/ 'sdtw_cent'; no quotes required
@@ -75,6 +77,8 @@ cat(occupancy_sorted_wrt_speed)
 sink()
 
 result_clustering@cluster
+
+
 original_cluster_order = c(1,2,3,4)  # assuming 4 clusters
 new_cluster_order =
   sapply(
@@ -82,5 +86,5 @@ new_cluster_order =
     function(o) which(occupancy_sorted_wrt_speed %in% o)
     )
 sink(".../cluster-sequence_decreasing-speed")
-cat(new_cluster_order[match(result_clustering@cluster, orig_cl_seq)])
+cat(new_cluster_order[match(result_clustering@cluster, original_cluster_order)])
 sink()
