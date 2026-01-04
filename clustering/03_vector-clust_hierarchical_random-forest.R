@@ -23,7 +23,7 @@ doSNOW::registerDoSNOW(clustr)
 d_rf <-
   foreach(n_tree=rep(1000/future::availableCores(), future::availableCores()), .combine=randomForest::combine, .packages="randomForest") %dopar%
   {randomForest(
-    df_chunks_DARs_synth[c("Sp_mean","Ta_mean","Sp_std","Ta_std","Rel_disp")],
+    df_chunks_DARs[c("Sp_mean","Ta_mean","Sp_std","Ta_std","Rel_disp")],
     y=NULL,
     ntree=n_tree,
     proximity=TRUE,
@@ -42,15 +42,15 @@ fastcluster::hclust(
 n=4  # number of clusters (staMEs)
 result_clustering <-
   cutree(
-    hierarc_rf_res,
+    result_clustering,
     k=n
   )
 
 
-print(noquote('Cluster sequence: ')
+print(noquote('Cluster sequence: '))
 result_clustering  # cluster sequence
 
-print(noquote('Cluster centroids in decreasing order or speed: ')
+print(noquote('Cluster centroids in decreasing order or speed: '))
 centroids <- NULL
 for(i in 1:n){
 centroids <-
