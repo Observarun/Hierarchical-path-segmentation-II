@@ -21,7 +21,7 @@ m=5
 k=4
 for(c in 1:k)
 { 
-  for(idx in which(cluster_sequence_word %in% c))
+  for(idx in which(cluster_sequence_words %in% c))
   {
     label <- paste0(
       scan(".../cluster-sequence_decreasing-speed")[(m*idx)-(m-1)],
@@ -70,7 +70,8 @@ for(c in 1:k)
       append(
         list_words_corresponding_segments[[idx_word]][[6]], net_disp
       )
-}
+  }
+ }
 
 
 saveRDS(list_words_corresponding_segments, ".../segments_corresp_each_word.Rds")
