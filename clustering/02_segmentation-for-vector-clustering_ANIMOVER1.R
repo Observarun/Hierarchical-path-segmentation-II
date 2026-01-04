@@ -1,4 +1,11 @@
+# Code for coordinated segmentation of ANIMOV1 simulation data at the two resolutions ($\mu$ steps and $m\mu$ steps) to perform vector clustering.
+
+
+
 library(dplyr)
+
+
+df_DARs_synth <- data.frame(readRDS(".../normalised_merged-DARs_ANIMOVER1.Rds"))
 
 
 create_chunks <- function(df, mu){
