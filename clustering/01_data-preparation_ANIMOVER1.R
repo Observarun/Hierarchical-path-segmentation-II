@@ -8,7 +8,7 @@ df_DARs_synth <-
   transform(
     df_DARs_synth,
     Delta=Delta+99*(Day-1)
-  )  # Time parameter in ANIMOV1 resets at the turn of each day.
+  )  # time parameter in ANIMOV1 resets at the turn of each day.
 
 colnames(df_DARs_synth)[6] <- "heading"  # Changing name of column 6 to reflect angle of heading.
 df_DARs_synth$heading <-
@@ -23,7 +23,7 @@ turning_angle_degree <-
   )  # turning angle
 turning_angle_degree <- abs(turning_angle_degree)  # only for absolute (or reflection invariant) turning angle
 
-df_DARs_synth <- df_DARs_synth[-1, ]  # time parameters in the ANIMOVER\_1 RAMP to produce $99$ points  for each of our "nominal days" other than for the first, which has $100$ points.
+df_DARs_synth <- df_DARs_synth[-1, ]  # for time parameter in the ANIMOVER\_1 RAMP to produce $99$ points for each of our "nominal days", other than for the first which has $100$ points
 df_DARs_synth$heading <- turning_angle_degree
 rm(turning_angle_degree)
 colnames(df_DARs_synth)[6] <- "turning_angle_degree"
