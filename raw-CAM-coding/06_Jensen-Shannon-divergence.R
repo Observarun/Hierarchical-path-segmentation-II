@@ -7,11 +7,12 @@ list_labels <- readRDS(".../word-type-distributions-each-CAM.Rds")
 
 cluster_occupancy_symbols <- cluster_occupancy_symbols/sum(cluster_occupancy_symbols)
 
+P_symbol <- cluster_occupancy_symbols
 P_Word_before <-
   sapply(  # lapply returns a list even when a vector is passed; sapply returns a vector
     labels_words,
     function(word){
-      prod(cluster_occupancy_symbols[strsplit(word,'')[[1]] |>
+      prod(P_symbol[strsplit(word,'')[[1]] |>
             as.numeric()])
     }
   )
