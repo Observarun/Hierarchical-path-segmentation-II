@@ -51,7 +51,8 @@ for(c in 1:k)
       append(list_words_corresponding_segments[[idx_word]][[5]], df_chunks_DARs_indiv[idx,5])
     list_words_corresponding_segments[[idx_word]][[6]] <-
       append(list_words_corresponding_segments[[idx_word]][[6]], df_chunks_DARs_indiv[idx,6])
-}  # df_chunks_DARs_indiv corresponds to the coarser resolution (word segments)
+  }  # df_chunks_DARs_indiv corresponds to the coarser resolution (word segments)
+}
 
 
 saveRDS(list_words_corresponding_segments, ".../segments_corresp_each_word.RData")
