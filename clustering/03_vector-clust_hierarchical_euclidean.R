@@ -20,7 +20,7 @@ result_clustering <-
 nk=4  # number of clusters
 result_clustering <-
   cutree(
-    hierarc_res,
+    result_clustering,
     k=nk
   )
 
@@ -56,5 +56,5 @@ new_cluster_order =
     function(o) which(occupancy_sorted_wrt_speed %in% o)
     )
 sink(".../cluster-sequence_decreasing-speed")
-cat(new_cluster_order[match(result_clustering, orig_cl_seq)])
+cat(new_cluster_order[match(result_clustering, original_cluster_order)])
 sink()
