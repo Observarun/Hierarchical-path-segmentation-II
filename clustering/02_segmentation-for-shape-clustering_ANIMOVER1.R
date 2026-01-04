@@ -19,4 +19,4 @@ mu=45  # for 45-step segments
 list_matrices_chunks_DARs <- create_list_chunks(matrix_DARs_synth, mu)
 
 
-saveRDS(df_chunks_DARs_synth, file=".../segments-for-shape-clust_ANIMOV.Rds")
+saveRDS(list_matrices_chunks_DARs, file=".../segments-for-shape-clust_ANIMOV.Rds")
