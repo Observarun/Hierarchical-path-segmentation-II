@@ -1,3 +1,7 @@
+# Code for coordinated segmentation of a ANIMOV1 simulation data at the two resolutions ($\mu$ steps and $m\mu$ steps) to perform shape-based clustering.
+
+
+
 df_DARs_synth <- data.frame(readRDS(".../normalised_merged-DARs_ANIMOVER1.Rds"))
 
 
