@@ -13,7 +13,7 @@ for (i in nbrs_DAR_indiv){
       df_DARs_indiv,
       list_DARs_indiv[[i]]
     )
-}  # To work with 25 random DARs of an individual
+}  # to work with 25 random DARs of an individual
 
 # Alternatively, to work with all available DARs of an individual, uncomment the next line (17).
 #df_DARs_indiv <- do.call(rbind, list_DARs_indiv)
@@ -68,19 +68,13 @@ colnames(df_DARs_indiv)[5] <- 'turning_angle'
 row.names(df_DARs_indiv) <- 1:nrow(df_DARs_indiv)
 
 
-df_DARs_indiv <-
-  na.omit(df_DARs_indiv)  # to remove NA values
-df_DARs_indiv <-
-  df_DARs_indiv[df_DARs_indiv$speed >= 0,]  # to remove spurious negative speeds
-df_DARs_indiv <-
-  df_DARs_indiv[df_DARs_indiv$speed < 70,]  # to remove obviously bogus points (unrealistically high speeds)
+df_DARs_indiv <- na.omit(df_DARs_indiv)  # to remove NA values
+df_DARs_indiv <- df_DARs_indiv[df_DARs_indiv$speed >= 0,]  # to remove spurious negative speeds
+df_DARs_indiv <- df_DARs_indiv[df_DARs_indiv$speed < 70,]  # to remove obviously bogus points (unrealistically high speeds)
 
 
-df_DARs_indiv$speed <-
-  (df_DARs_indiv$speed)/max(df_DARs_indiv$speed)
-df_DARs_indiv$turning_angle <-
-  (df_DARs_indiv$turning_angle)/pi
-# Scaling to bring the variables to range on [0,1].
+df_DARs_indiv$speed <- (df_DARs_indiv$speed)/max(df_DARs_indiv$speed)
+df_DARs_indiv$turning_angle <- (df_DARs_indiv$turning_angle)/pi  # scaling to bring the variables to range on [0,1]
 
 
 saveRDS(df_DARs_indiv, file=".../normalised_merged-DARs_barn-owl.Rds")
