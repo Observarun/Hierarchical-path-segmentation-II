@@ -14,7 +14,7 @@ for(c in 1:k){
   words_in_CAMs[[c]] <- 
     append(
       words_in_CAMs[[c]],
-      rep(df_labels_counts_maxcountcluster$distinct_labels [which(df_labels_counts_maxcountcluster$max_count_cluster %in% c)],
+      rep(df_labels_counts_maxcountcluster$distinct_labels[which(df_labels_counts_maxcountcluster$max_count_cluster %in% c)],
           df_labels_counts_maxcountcluster$total_count[which(df_labels_counts_maxcountcluster$max_count_cluster %in% c)])
     )
 }
